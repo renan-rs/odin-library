@@ -2,6 +2,10 @@
 
 ## Project: Library
 
+### PREVIEW
+[https://renan-rs.github.io/odin-library/](https://renan-rs.github.io/odin-library/)
+
+
 1. If you haven’t already, set up a Git repository for your project with skeleton HTML/CSS and JS files. From here on out, we’ll assume that you have already done this.
 2. All of your book objects are going to be stored in an array, so add a function to the script (not the constructor) that can take some arguments, create a book from those arguments, and store the new book object into an array. Your code should look something like this:
 ```js
