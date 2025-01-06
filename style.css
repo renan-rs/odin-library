@@ -28,20 +28,11 @@ h1{
     color: dodgerblue;
     margin-bottom: 40px;
 }
-/* .container{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 3fr;
-    gap:20px;
-    grid-template-areas: 
-        "buttons"
-        "books";
-} */
 .container{
     display: grid;
     gap:20px;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 5fr;
+    /* grid-template-rows: 1fr 5fr; */
     grid-template-areas: 
         "buttons"
         "books";
@@ -52,8 +43,7 @@ h1{
 .books{
     grid-area: books;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    /* grid-template-rows: 120px; */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap:20px;
 }
 
@@ -82,7 +72,7 @@ h1{
     color: red;
 }
 .read{
-    color: green !important;
+    color: dodgerblue !important;
 }
 .book .book-actions{
     margin-top:20px;
@@ -98,6 +88,12 @@ h1{
     font-size: .6rem;
     text-transform: uppercase;
     color:gray;
+}
+.book .book-actions > div .fa-trash-can{
+    color: red;
+}
+.book .book-actions > div .fa-toggle-on{
+    color:dodgerblue;
 }
 
 /* DIALOG */

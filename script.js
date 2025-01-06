@@ -6,8 +6,7 @@ const btnCloseDialog = dialog.querySelector("#dialog-close");
 const btnAddBook = dialog.querySelector("#add-book");
 const readCheckbox = dialog.querySelector("#book-read");
 const readOutput = dialog.querySelector("#read-output");
-// const actionRemove = document.querySelector(".action-remove");
-// const actionRead = document.querySelector(".action-read");
+
 const myLibrary = [];
 
 function Book(title, author, numOfPages, read){
@@ -122,11 +121,14 @@ function clickActionRead(e){
     myLibrary[dataIndex].read = !myLibrary[dataIndex].read;
     showLibrary();
 }
+
 function clickActionRemove(e){
-    const dataIndex = e.currentTarget.closest(".book").getAttribute("data-index");
-    //myLibrary[dataIndex].read = !myLibrary[dataIndex].read;
-    //showLibrary();
-    console.log(dataIndex);
+    const book = e.currentTarget.closest(".book");
+    const bookTitle = book.firstChild.textContent;
+    if(confirm(`Remove book "${bookTitle}"?`)) {
+        myLibrary.splice(book.getAttribute("data-index"), 1);
+        showLibrary();
+    }
 }
 
 addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', 295, false);
