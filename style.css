@@ -73,6 +73,7 @@ h1{
 }
 .book > p {
     font-size: .9rem;
+    margin-top: 8px;
 }
 .book > p > span{
     font-weight: 700;
@@ -82,6 +83,21 @@ h1{
 }
 .read{
     color: green !important;
+}
+.book .book-actions{
+    margin-top:20px;
+    display: flex;
+    gap: 20px;
+}
+.book .book-actions > div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.book .book-actions > div span{
+    font-size: .6rem;
+    text-transform: uppercase;
+    color:gray;
 }
 
 /* DIALOG */
@@ -110,15 +126,48 @@ dialog form{
 }
 dialog form .form-group{
     display: flex;
+    align-items: center;
     gap:10px;
 }
+dialog form .form-group:last-child{
+    margin-top:30px;
+}
 dialog form label{
-    width: 20%;
+    width: 24%;
     text-align: left;
+}
+dialog form input{
+    border:1px solid dodgerblue;
+    border-radius: 6px;
+    padding: 5px 10px;
+}
+dialog form input[type="checkbox"]{
+    width: 16px;
+    height: 16px;
 }
 dialog form input[type="text"],
 dialog form input[type="number"]{
     width: 100%;
+}
+dialog form input:focus{
+    outline: 1px solid dodgerblue;
+}
+dialog form input:focus:invalid{
+    outline: 1px solid dodgerblue;
+    border-color: dodgerblue;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+}
+dialog form input::placeholder{
+    color: gray;
+}
+dialog form input:invalid{
+    border-color: red;
+}
+dialog form output{
+    font-size: 0.8rem;
+}
+::backdrop{
+    background-color: rgba(0,0,0,0.8);
 }
 
 /* @media (min-width: 900px){

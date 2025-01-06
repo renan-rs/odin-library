@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project: Library</title>
+    <script src="https://kit.fontawesome.com/f76a988bf2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -20,6 +21,16 @@
                 <p>Author: <span>J.R.R Tolkien</span></p>
                 <p>Pages: <span>295</span></p>
                 <p>Read: <span class="book-read">No</span></p>
+                <div class="book-actions">
+                    <div class="action-remove">
+                        <i class="fa-solid fa-trash-can"></i>
+                        <span>remove</span>
+                    </div>
+                    <div class="action-read">
+                        <i class="fa-solid fa-toggle-on"></i>
+                        <span>read</span>
+                    </div>
+                </div>
             </div>
             <div class="book">
                 <h3 class="book-title">The Hobbit</h3>
@@ -46,20 +57,21 @@
         <h2>Add new book</h2>
         <form method="dialog" id="dialog-form">
             <div class="form-group">
-                <label for="book-title">Title</label>
-                <input type="text" name="bookTitle" id="book-title" required>
+                <label for="book-title">Title*</label>
+                <input type="text" name="bookTitle" id="book-title" placeholder="The Hobbits" required>
             </div>
             <div class="form-group">
-                <label for="book-author">Author</label>
-                <input type="text" name="bookAuthor" id="book-author" required>
+                <label for="book-author">Author*</label>
+                <input type="text" name="bookAuthor" id="book-author" placeholder="J.R.R. Tolkien" required>
             </div>
             <div class="form-group">
-                <label for="book-pages">Pages</label>
-                <input type="number" name="bookPages" id="book-pages" min="1" required>
+                <label for="book-pages">Pages*</label>
+                <input type="number" name="bookPages" id="book-pages" min="1" placeholder="132" required>
             </div>
             <div class="form-group">
                 <label for="book-read">Read</label>
                 <input type="checkbox" name="bookRead" id="book-read">
+                <output id="read-output">No</output>
             </div>
             <div class="form-group">
                 <input type="button" id="dialog-close" value="Cancel" />
