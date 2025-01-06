@@ -1,3 +1,131 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+/* BASIC */
+button,
+dialog form :last-child input{
+    background-color: dodgerblue;
+    color:white;
+    font-size: .8rem;
+    font-weight: 700;
+    padding: 5px 20px;
+    border: 2px solid dodgerblue;
+    border-radius: 10px;
+}
+button:hover,
+dialog form :last-child input:hover{
+    background-color: white;
+    color:black;
+}
 h1{
     color: dodgerblue;
+    margin-bottom: 40px;
 }
+/* .container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr;
+    gap:20px;
+    grid-template-areas: 
+        "buttons"
+        "books";
+} */
+.container{
+    display: grid;
+    gap:20px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 5fr;
+    grid-template-areas: 
+        "buttons"
+        "books";
+}
+.buttons{
+    grid-area: buttons;
+}
+.books{
+    grid-area: books;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* grid-template-rows: 120px; */
+    gap:20px;
+}
+
+/* BOOK CARDS */
+.book{
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    border-bottom: 4px solid dodgerblue;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.05);
+}
+.book > h3{
+    margin-bottom: 10px;
+}
+.book > p {
+    font-size: .9rem;
+}
+.book > p > span{
+    font-weight: 700;
+}
+.book > p > span.book-read{
+    color: red;
+}
+.read{
+    color: green !important;
+}
+
+/* DIALOG */
+dialog{
+    /* position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); */
+    margin: 5% auto;
+    width: 80%;
+    max-width: 350px;
+    background-color: white;
+    padding: 20px;
+    border: 0;
+    border-radius: 10px;
+}
+dialog h2{
+    text-align: center;
+    color: dodgerblue;
+}
+dialog form{
+    margin-top:30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+dialog form .form-group{
+    display: flex;
+    gap:10px;
+}
+dialog form label{
+    width: 20%;
+    text-align: left;
+}
+dialog form input[type="text"],
+dialog form input[type="number"]{
+    width: 100%;
+}
+
+/* @media (min-width: 900px){
+    .container{
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+            "books buttons";
+    }
+} */
