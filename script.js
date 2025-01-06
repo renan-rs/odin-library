@@ -98,13 +98,16 @@ btnCloseDialog.addEventListener("click", (e) => {
 });
 dialogForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const bookTitle = dialog.querySelector("#book-title").value;
-    const bookAuthor = dialog.querySelector("#book-author").value;
-    const bookPages = parseInt(dialog.querySelector("#book-pages").value);
-    const bookRead = dialog.querySelector("#book-read").checked;
+    let bookTitle = dialog.querySelector("#book-title");
+    let bookAuthor = dialog.querySelector("#book-author");
+    let bookPages = dialog.querySelector("#book-pages");
+    let bookRead = dialog.querySelector("#book-read");
 
-    addBookToLibrary(bookTitle, bookAuthor, bookPages, bookRead);
-    
+    addBookToLibrary(bookTitle.value, bookAuthor.value, parseInt(bookPages.value), bookRead.checked);
+    bookTitle.value = '';
+    bookAuthor.value = '';
+    bookPages.value = '';
+    bookRead.checked = false;
     dialog.close();
 });
 
